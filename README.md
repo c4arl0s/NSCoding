@@ -1,6 +1,8 @@
 # NSCoding
 
-NSCoding protocol
+NSCoding 
+
+- A protocol that enables an object to be encoded and decoded for achiving and distribution.
 
 You can't put just any object in a plist. This mainly gets people when they want to put something into NSUserDefaults and get an error 
 
