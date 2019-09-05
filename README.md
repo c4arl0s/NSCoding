@@ -13,3 +13,50 @@ NSCoding
 - .. and of course NSCoding.
 
 You can convert any object to NSData with the NSCoding protocol.
+
+# Create a swift class 
+
+``` swift
+//
+//  UglyPersonData.swift
+//  NSCodingProject
+//
+//  Created by Carlos Santiago Cruz on 9/4/19.
+//  Copyright © 2019 Carlos Santiago Cruz. All rights reserved.
+//
+
+import UIKit
+
+class UglyPersonData: NSObject {
+
+}
+```
+
+# Conform NSCoding protocol
+
+``` swift
+//
+//  UglyPersonData.swift
+//  NSCodingProject
+//
+//  Created by Carlos Santiago Cruz on 9/4/19.
+//  Copyright © 2019 Carlos Santiago Cruz. All rights reserved.
+//
+
+import UIKit
+
+class UglyPersonData: NSObject, NSCoding {
+    func encode(with aCoder: NSCoder) {
+        <#code#>
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        <#code#>
+    }
+    
+
+}
+```
+
+
+
