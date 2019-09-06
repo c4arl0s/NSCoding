@@ -58,5 +58,11 @@ class UglyPersonData: NSObject, NSCoding {
 }
 ```
 
+# There are two approaches to persis data
+
+- To the Local File System
+- NSUserDefaults
+
+
 
 
