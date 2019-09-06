@@ -148,12 +148,14 @@ NS_ASSUME_NONNULL_END
     }
     
     // Unarchiving object
-    
     NSMutableData *newMutableData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
     NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:newMutableData];
     Note *newNote = [keyedUnarchiver decodeObjectForKey:@"NoteObject"];
         if (newNote) {
             NSLog(@"this is the unarchive object: %@", newNote);
+            NSLog(@"this is the unarchive object: %@", newNote.title);
+            NSLog(@"this is the unarchive object: %@", newNote.author);
+            NSLog(@"this is the unarchive object: %d", newNote.isPublished);
         }
         else
         {
@@ -164,4 +166,13 @@ NS_ASSUME_NONNULL_END
 
 
 @end
+```
+
+``` console
+2019-09-06 13:20:37.976298-0500 NSCoding_ObjectiveC[19749:3151459] object to archive: <Note: 0x60800003e900>
+2019-09-06 13:20:38.000178-0500 NSCoding_ObjectiveC[19749:3151459] This is your first write-to-file success
+2019-09-06 13:20:38.000518-0500 NSCoding_ObjectiveC[19749:3151459] this is the unarchive object: <Note: 0x608000220500>
+2019-09-06 13:20:38.000867-0500 NSCoding_ObjectiveC[19749:3151459] this is the unarchive object: Daily note
+2019-09-06 13:20:38.001190-0500 NSCoding_ObjectiveC[19749:3151459] this is the unarchive object: Carlos Santiago
+2019-09-06 13:20:38.001392-0500 NSCoding_ObjectiveC[19749:3151459] this is the unarchive object: 1
 ```
