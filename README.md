@@ -150,7 +150,7 @@ NS_ASSUME_NONNULL_END
     }
     
     if (IOS10_OR_LATER) {
-        NSLog(@"This iOS versions is above 10.0");
+        NSLog(@"This iOS versions is above 12.0");
     }
     else
     {
