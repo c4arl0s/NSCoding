@@ -14,14 +14,14 @@ NSCoding
 
 You can convert any object to NSData with the NSCoding protocol.
 
-# There are two approaches to persis data
+# There are two approaches to persist an instance of a class.
 
 - To the Local File System
 - NSUserDefaults
 
-# Local File System
+# Using Local File System
 
-# Steps to persis in Local File System
+# Steps to persist in Local File System
 
 - write your class
 - Implemente protocol NSCoding
