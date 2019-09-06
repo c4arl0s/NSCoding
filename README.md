@@ -141,10 +141,10 @@ NS_ASSUME_NONNULL_END
     // write to file
     BOOL success = [mutableData writeToFile:filePath atomically:YES];
     if (success) {
-        NSLog(@"This is your first write to file sucessed");
+        NSLog(@"This is your first write-to-file success");
     }
     else {
-        NSLog(@"There is a proble when it tries to save");
+        NSLog(@"There is a problem when it tries to save");
     }
     
     // Unarchiving object
