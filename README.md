@@ -21,6 +21,15 @@ You can convert any object to NSData with the NSCoding protocol.
 
 # Local File System
 
+# Steps to persis in Local File System
+
+- write your class
+- Implemente protocol NSCoding
+- Conform protocol in implementation file.
+- Archive
+- Create the paths in the file system
+- Unarchive to test if you saved correctly.
+
 # NSUserDefaults
 
 # Create a Note class
