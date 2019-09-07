@@ -16,8 +16,9 @@ You can convert any object to NSData with the NSCoding protocol.
 
 # There are two approaches to persist an instance of a class.
 
-- To the Local File System
-- NSUserDefaults
+| Local File System   |      NSUserDefaults      |  
+|---------------------|:------------------------:|
+    
 
 # Using Local File System
 
