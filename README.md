@@ -132,7 +132,7 @@ NS_ASSUME_NONNULL_END
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // create an note instance
+    // create a note instance
     note = [[Note alloc] init];
     
     // stored new values
@@ -149,6 +149,7 @@ NS_ASSUME_NONNULL_END
     [keyedArchiver finishEncoding];
     
     // create the paths
+    // In swift we can also create URLs, which is the best way.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *stringDocumentsDirectoryPath = [paths objectAtIndex:0];
     NSString *filePath = [stringDocumentsDirectoryPath stringByAppendingPathComponent:@"notes.plist"];
@@ -162,6 +163,7 @@ NS_ASSUME_NONNULL_END
         NSLog(@"There is a problem when it tries to save");
     }
     
+    // Unarchiving
     if (IOS12_OR_LATER) {
         NSLog(@"This iOS versions is or above 12.0");
     }
