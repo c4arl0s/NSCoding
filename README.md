@@ -119,7 +119,7 @@ NS_ASSUME_NONNULL_END
 #import "ViewController.h"
 #import "Note.h"
 
-#define IOS10_OR_LATER [[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0
+#define IOS12_OR_LATER [[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0
 
 @interface ViewController ()
 {
@@ -162,11 +162,12 @@ NS_ASSUME_NONNULL_END
         NSLog(@"There is a problem when it tries to save");
     }
     
-    if (IOS10_OR_LATER) {
-        NSLog(@"This iOS versions is above 12.0");
+    if (IOS12_OR_LATER) {
+        NSLog(@"This iOS versions is or above 12.0");
     }
     else
     {
+        NSLog(@"This iOS versions is below 12.0");
         NSMutableData *newMutableData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
         NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:newMutableData];
         Note *unarchivedNote = [keyedUnarchiver decodeObjectForKey:@"NoteObject"];
@@ -191,10 +192,12 @@ NS_ASSUME_NONNULL_END
 # Console
 
 ``` console
-2019-09-09 10:50:05.826753-0500 NSCoding_ObjectiveC[54539:4933080] object to archive: <Note: 0x600000426820>
-2019-09-09 10:50:06.050412-0500 NSCoding_ObjectiveC[54539:4933080] This is your first write-to-file success
-2019-09-09 10:50:06.050936-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: <Note: 0x604000220820>
-2019-09-09 10:50:06.051057-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: Daily note
-2019-09-09 10:50:11.080812-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: Carlos Santiago
-2019-09-09 10:50:11.080971-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: 1
+2019-09-09 10:56:27.789555-0500 NSCoding_ObjectiveC[55025:4938012] object to archive: <Note: 0x604000037600>
+2019-09-09 10:56:27.817591-0500 NSCoding_ObjectiveC[55025:4938012] This is your first write-to-file success
+2019-09-09 10:56:27.817889-0500 NSCoding_ObjectiveC[55025:4938012] This iOS versions is below 12.0
+2019-09-09 10:56:27.818187-0500 NSCoding_ObjectiveC[55025:4938012] this is the unarchive object: <Note: 0x60c000031760>
+2019-09-09 10:56:27.818295-0500 NSCoding_ObjectiveC[55025:4938012] this is the unarchive object: Daily note
+2019-09-09 10:56:27.818391-0500 NSCoding_ObjectiveC[55025:4938012] this is the unarchive object: Carlos Santiago
+2019-09-09 10:56:27.818480-0500 NSCoding_ObjectiveC[55025:4938012] this is the unarchive object: 1
+
 ```
