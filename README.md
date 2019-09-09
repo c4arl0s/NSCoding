@@ -131,8 +131,11 @@ NS_ASSUME_NONNULL_END
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // create an note instance
     note = [[Note alloc] init];
     
+    // stored new values
     note.title = @"Daily note";
     note.author = @"Carlos Santiago";
     note.isPublished = YES;
@@ -166,20 +169,19 @@ NS_ASSUME_NONNULL_END
     {
         NSMutableData *newMutableData = [[NSMutableData alloc] initWithContentsOfFile:filePath];
         NSKeyedUnarchiver *keyedUnarchiver = [[NSKeyedUnarchiver alloc] initForReadingWithData:newMutableData];
-        Note *newNote = [keyedUnarchiver decodeObjectForKey:@"NoteObject"];
-        if (newNote) {
-            NSLog(@"this is the unarchive object: %@", newNote);
-            NSLog(@"this is the unarchive object: %@", newNote.title);
-            NSLog(@"this is the unarchive object: %@", newNote.author);
-            NSLog(@"this is the unarchive object: %d", newNote.isPublished);
+        Note *unarchivedNote = [keyedUnarchiver decodeObjectForKey:@"NoteObject"];
+        if (unarchivedNote) {
+            NSLog(@"this is the unarchive object: %@", unarchivedNote);
+            NSLog(@"this is the unarchive object: %@", unarchivedNote.title);
+            NSLog(@"this is the unarchive object: %@", unarchivedNote.author);
+            NSLog(@"this is the unarchive object: %d", unarchivedNote.isPublished);
         }
         else
         {
-            NSLog(@"There is nothing into the object: %@", newNote);
+            NSLog(@"There is nothing into the object: %@", unarchivedNote);
         }
         [keyedUnarchiver finishDecoding];
     }
-    
 }
 
 
@@ -189,10 +191,10 @@ NS_ASSUME_NONNULL_END
 # Console
 
 ``` console
-2019-09-06 13:40:01.842355-0500 NSCoding_ObjectiveC[20808:3195966] object to archive: <Note: 0x60c0000398c0>
-2019-09-06 13:40:01.908351-0500 NSCoding_ObjectiveC[20808:3195966] This is your first write-to-file success
-2019-09-06 13:40:09.145450-0500 NSCoding_ObjectiveC[20808:3195966] this is the unarchive object: <Note: 0x60c000039140>
-2019-09-06 13:40:09.145618-0500 NSCoding_ObjectiveC[20808:3195966] this is the unarchive object: Daily note
-2019-09-06 13:40:09.145709-0500 NSCoding_ObjectiveC[20808:3195966] this is the unarchive object: Carlos Santiago
-2019-09-06 13:40:09.145788-0500 NSCoding_ObjectiveC[20808:3195966] this is the unarchive object: 1
+2019-09-09 10:50:05.826753-0500 NSCoding_ObjectiveC[54539:4933080] object to archive: <Note: 0x600000426820>
+2019-09-09 10:50:06.050412-0500 NSCoding_ObjectiveC[54539:4933080] This is your first write-to-file success
+2019-09-09 10:50:06.050936-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: <Note: 0x604000220820>
+2019-09-09 10:50:06.051057-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: Daily note
+2019-09-09 10:50:11.080812-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: Carlos Santiago
+2019-09-09 10:50:11.080971-0500 NSCoding_ObjectiveC[54539:4933080] this is the unarchive object: 1
 ```
