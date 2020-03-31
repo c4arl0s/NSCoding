@@ -12,7 +12,7 @@ NSCoding_ObjectiveC
 
 - A protocol that enables an object to be encoded and decoded for achiving and distribution.
 
-# 1. [There are many ways to Save data to disk in iOS]()
+# 1. [There are many ways to Save data to disk in iOS](https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 
 - Raw file APIS
 - Property List Serialization
@@ -22,15 +22,15 @@ NSCoding_ObjectiveC
 
 You can convert any object to NSData with the NSCoding protocol.
 
-# 2. [There are two approaches to persist an instance of a class.]()
+# 2. [There are two approaches to persist an instance of a class.](https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 
 | Local File System   |      NSUserDefaults      |  
 |---------------------|:------------------------:|
     
 
-# 3. [Using Local File System]()
+# 3. [Using Local File System](https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 
-# 4. [Steps to persist in Local File System]()
+# 4. [Steps to persist in Local File System](https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 
 - write your class
 - Implemente protocol NSCoding
@@ -39,7 +39,7 @@ You can convert any object to NSData with the NSCoding protocol.
 - Create the paths in the file system
 - Unarchive to test if you saved correctly.
 
-# 5. [NSUserDefaults]()
+# 5. [NSUserDefaults](https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 
 # Create a Note class
 
@@ -129,7 +129,7 @@ NS_ASSUME_NONNULL_END
 
 #define IOS12_OR_LATER [[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0
 
-@interface ViewController ()
+@interface ViewController (https://github.com/c4arl0s/NSCoding_ObjectiveC#nscoding)
 {
     Note *note;
 }
