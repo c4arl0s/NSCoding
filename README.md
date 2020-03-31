@@ -1,10 +1,18 @@
 # NSCoding
 
+1. [There are many ways to Save data to disk in iOS]()
+2. [There are two approaches to persist an instance of a class.]()
+3. [Using Local File System]()
+4. [Steps to persist in Local File System]()
+5. [NSUserDefaults]()
+
+
+
 NSCoding_ObjectiveC
 
 - A protocol that enables an object to be encoded and decoded for achiving and distribution.
 
-# There are many ways to Save data to disk in iOS
+# 1. [There are many ways to Save data to disk in iOS]()
 
 - Raw file APIS
 - Property List Serialization
@@ -14,15 +22,15 @@ NSCoding_ObjectiveC
 
 You can convert any object to NSData with the NSCoding protocol.
 
-# There are two approaches to persist an instance of a class.
+# 2. [There are two approaches to persist an instance of a class.]()
 
 | Local File System   |      NSUserDefaults      |  
 |---------------------|:------------------------:|
     
 
-# Using Local File System
+# 3. [Using Local File System]()
 
-# Steps to persist in Local File System
+# 4. [Steps to persist in Local File System]()
 
 - write your class
 - Implemente protocol NSCoding
@@ -31,7 +39,7 @@ You can convert any object to NSData with the NSCoding protocol.
 - Create the paths in the file system
 - Unarchive to test if you saved correctly.
 
-# NSUserDefaults
+# 5. [NSUserDefaults]()
 
 # Create a Note class
 
